@@ -1,9 +1,10 @@
 const searchBar = document.getElementById("searchBar");
 const memberList = document.getElementById("dataTable");
+const editEvent = document.getElementById("editId");
 let members = [];
 
-searchBar.addEventListener("keyup", (e) => {
-  const searchString = e.target.value.toLowerCase();
+searchBar.addEventListener("keyup", (event) => {
+  const searchString = event.target.value.toLowerCase();
   const filteredMembers = members.filter((character) => {
     return (
       character.name.toLowerCase().includes(searchString) ||
@@ -16,7 +17,6 @@ searchBar.addEventListener("keyup", (e) => {
 
 const populateMembers = async () => {
   try {
-    console.log("before before");
     const res = await fetch(
       "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
     );
@@ -35,8 +35,19 @@ const displayMembers = (members) => {
          <td>${members.name}</td>
          <td>${members.email}</td>
          <td>${members.role}</td>
-         <td><button type="button" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i></button></td>
-         <td><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></td>
+
+         <td>
+         <button class="btn btn-secondary">
+         <i class="fa-solid fa-pen-to-square"></i>
+         </button>
+         </td>
+
+         <td>
+         <button class="btn btn-danger">
+         <i class="fa-solid fa-trash"></i>
+         </button>
+         </td>
+
          </tr>`;
     })
     .join("");
