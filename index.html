@@ -20,8 +20,8 @@
         <div id="searchWrapper">
             <input type="text" name="searchBar" id="searchBar" placeholder="Search">
         </div>
-
     </div>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
@@ -31,7 +31,7 @@
                             <th>
                                 <input type="checkbox" />
                             </th>
-                            <th>Name</th>
+                            <th id="name">Name</th>
                             <th>Email</th>
                             <th>Role</th>
                             <th id="actionId">Action</th>
@@ -42,6 +42,19 @@
         </div>
     </div>
     <script src="index.js"></script>
+
+
+    <div class="d-flex justify-content-center">
+        <ul class="pagination mt-3 mb-0">
+            <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
+            <li class="active page-item"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link">»</a></li>
+        </ul>
+    </div>
+
+    <button id="deleteAll" >Delete Selected</button>
 </body>
 
 </html>
